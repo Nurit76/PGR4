@@ -1,0 +1,8 @@
+let
+    Source = Base_Infos_Dates,
+    #"Personnalisée ajoutée" = Table.AddColumn(Source, "Date VSR", each Number.From([#"Date d'extraction"])-120),
+    #"Type modifié1" = Table.TransformColumnTypes(#"Personnalisée ajoutée",{{"Date VSR", type date}}),
+    #"Colonnes supprimées" = Table.RemoveColumns(#"Type modifié1",{"Date d'extraction"}),
+    #"Date VSR" = #"Colonnes supprimées"{0}[Date VSR]
+in
+    #"Date VSR"
