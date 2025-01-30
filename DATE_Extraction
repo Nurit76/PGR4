@@ -1,0 +1,5 @@
+let
+    Source = Base_Infos_Dates,
+    #"27/01/2025" = Source{[#"Date d'extraction"=#date(2025, 1, 27)]}[#"Date d'extraction"]
+in
+    #"27/01/2025"
